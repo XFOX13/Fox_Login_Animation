@@ -1,132 +1,67 @@
 body {
-  background: #efefef;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  background: linear-gradient(120deg, #ffede3 0%, #ffe7be 100%);
   margin: 0;
+  min-height: 100vh;
+  font-family: "Nunito", Arial, sans-serif;
 }
 
-.container {
-  text-align: center;
-}
-
-.fox {
-  position: relative;
-  width: 180px;
-  height: 130px;
-  margin: 0 auto 25px;
-}
-
-.ear {
-  position: absolute;
-  top: 0;
-  width: 45px;
-  height: 55px;
-  background: #E27934;
-  border-radius: 50% 50% 0 0;
-}
-
-.ear.left {
-  left: -35px;
-  transform: rotate(-15deg);
-}
-
-.ear.right {
-  right: -35px;
-  transform: rotate(15deg);
-}
-
-.face {
-  width: 140px;
-  height: 110px;
-  background: #E27934;
-  border-radius: 50% 50% 55% 55%;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 1;
-  box-shadow: 0 3px 15px #d15d1e40;
-}
-
-.eye {
-  width: 32px;
-  height: 32px;
-  background: #fff;
-  border-radius: 50%;
-  position: absolute;
-  top: 35px;
-}
-
-.eye.left {
-  left: 28px;
-}
-
-.eye.right {
-  right: 28px;
-}
-
-.pupil {
-  width: 14px;
-  height: 14px;
-  background: #222;
-  border-radius: 50%;
-  position: absolute;
-  top: 9px;
-  left: 9px;
-  transition: transform .1s;
-}
-
-.nose {
-  width: 18px;
-  height: 18px;
-  background: #333;
-  border-radius: 50% 50% 60% 60%;
-  position: absolute;
-  top: 70px;
-  left: 61px;
-}
-
-.paw {
-  width: 35px;
-  height: 35px;
-  background: #e28850;
-  border-radius: 50% 50% 45% 45%;
-  position: absolute;
-  top: 68px;
-  z-index: 2;
-  opacity: 0;
-  transition: opacity .17s;
-}
-
-.paw.left {
-  left: 0px;
-}
-.paw.right {
-  right: 0px;
-}
-
-form {
+.login-container {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  width: 220px;
-  margin: 0 auto;
+  align-items: center;
+  margin-top: 36px;
+}
+
+.fox-anim {
+  margin-bottom: -2rem;
+  user-select: none;
+}
+
+form.login-form {
+  background: #fff;
+  padding: 34px 24px 26px 24px;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-shadow: 0 8px 36px #e2793440;
+  width: 100%;
+  max-width: 355px;
 }
 
 input {
-  font-size: 17px;
-  padding: 8px;
-  border: 2px solid #ddd;
-  border-radius: 7px;
+  font-size: 1.1rem;
+  padding: 11px 16px;
+  border: 2px solid #efb97c;
+  border-radius: 10px;
+  transition: border .16s;
+  outline: none;
+}
+input:focus {
+  border: 2px solid #E27934;
 }
 
 button {
-  font-size: 18px;
-  background: #E27934;
-  border: 0;
+  font-size: 1.1rem;
+  background: #e27934;
   color: #fff;
-  padding: 10px;
-  border-radius: 7px;
+  border: 0;
+  padding: 12px 0;
+  border-radius: 9px;
+  font-weight: bold;
   cursor: pointer;
+  transition: background .18s;
+}
+button:hover {
+  background: #cd660f;
+}
+
+@media (max-width: 500px) {
+  .fox-anim svg {
+    width: 99vw;
+    height: auto;
+  }
+  form.login-form {
+    max-width: 99vw;
+  }
 }
