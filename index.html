@@ -2,30 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Animated Fox Login</title>
+  <title>Fox Login</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <div class="fox">
-      <div class="ear left"></div>
-      <div class="ear right"></div>
-      <div class="face">
-        <div class="eye left">
-          <div class="pupil" id="pupil-left"></div>
-        </div>
-        <div class="eye right">
-          <div class="pupil" id="pupil-right"></div>
-        </div>
-        <div class="nose"></div>
-        <div class="paw left" id="paw-left"></div>
-        <div class="paw right" id="paw-right"></div>
-      </div>
+  <div class="login-container">
+    <div class="fox-anim">
+      <!-- SVG FOX -->
+      <svg id="fox" viewBox="0 0 420 340" width="280" height="226">
+        <!-- Tail -->
+        <path id="tail" d="M60,320 Q10,270 90,220 Q120,250 110,300 Q100,320 60,320" fill="#E27934" stroke="#df7125" stroke-width="4"/>
+        <ellipse cx="65" cy="320" rx="15" ry="12" fill="#fff1d0"/>
+        <!-- Body -->
+        <ellipse cx="210" cy="230" rx="120" ry="70" fill="#E27934" stroke="#df7125" stroke-width="4"/>
+        <!-- Belly -->
+        <ellipse cx="210" cy="245" rx="75" ry="45" fill="#fff1d0"/>
+        <!-- Legs -->
+        <rect x="125" y="280" width="22" height="45" rx="12" fill="#744a26"/>
+        <rect x="273" y="278" width="22" height="45" rx="12" fill="#744a26"/>
+        <!-- Head group -->
+        <g id="fox-head">
+          <!-- Head -->
+          <ellipse cx="210" cy="120" rx="76" ry="70" fill="#ff9742" stroke="#df7125" stroke-width="4"/>
+          <!-- Left ear -->
+          <g id="ear-left">
+            <ellipse cx="150" cy="50" rx="28" ry="55" fill="#ff9742" stroke="#df7125" stroke-width="4"/>
+            <ellipse cx="150" cy="60" rx="13" ry="25" fill="#fff1d0"/>
+          </g>
+          <!-- Right ear -->
+          <g id="ear-right">
+            <ellipse cx="270" cy="50" rx="28" ry="55" fill="#ff9742" stroke="#df7125" stroke-width="4"/>
+            <ellipse cx="270" cy="60" rx="13" ry="25" fill="#fff1d0"/>
+          </g>
+          <!-- Eyes & paws grouped for animation -->
+          <g id="eyes-paws">
+            <!-- Eye whites -->
+            <ellipse class="eye-white" cx="185" cy="125" rx="16" ry="24" fill="#fff"/>
+            <ellipse class="eye-white" cx="235" cy="125" rx="16" ry="24" fill="#fff"/>
+            <!-- Pupils -->
+            <ellipse id="pupil-left"  cx="185" cy="133" rx="6" ry="9" fill="#35251a"/>
+            <ellipse id="pupil-right" cx="235" cy="133" rx="6" ry="9" fill="#35251a"/>
+            <!-- Paws covering eyes (start hidden) -->
+            <g id="paw-cover-left" style="opacity:0">
+              <ellipse cx="170" cy="125" rx="22" ry="14" fill="#E27934" />
+              <ellipse cx="170" cy="137" rx="11" ry="7" fill="#fff1d0"/>
+            </g>
+            <g id="paw-cover-right" style="opacity:0">
+              <ellipse cx="250" cy="125" rx="22" ry="14" fill="#E27934"/>
+              <ellipse cx="250" cy="137" rx="11" ry="7" fill="#fff1d0"/>
+            </g>
+          </g>
+          <!-- Nose & accents -->
+          <ellipse cx="210" cy="153" rx="13" ry="13" fill="#35251a"/>
+          <ellipse cx="215" cy="151" rx="4" ry="2" fill="#fff" opacity="0.25"/>
+        </g>
+        <!-- Paws front -->
+        <ellipse cx="165" cy="215" rx="32" ry="20" fill="#ff9742" stroke="#df7125" stroke-width="4"/>
+        <ellipse cx="255" cy="215" rx="32" ry="20" fill="#ff9742" stroke="#df7125" stroke-width="4"/>
+        <!-- Toes -->
+        <ellipse cx="155" cy="231" rx="8" ry="6" fill="#fff1d0"/>
+        <ellipse cx="175" cy="231" rx="8" ry="6" fill="#fff1d0"/>
+        <ellipse cx="245" cy="231" rx="8" ry="6" fill="#fff1d0"/>
+        <ellipse cx="265" cy="231" rx="8" ry="6" fill="#fff1d0"/>
+      </svg>
     </div>
-    <form>
-      <input type="text" id="user" placeholder="Username">
-      <input type="password" id="pass" placeholder="Password">
-      <button type="submit">Login</button>
+    <form class="login-form" autocomplete="off">
+      <input id="username" name="username" autocomplete="off" type="text" placeholder="Username" required>
+      <input id="password" name="password" autocomplete="off" type="password" placeholder="Password" required>
+      <button>Login</button>
     </form>
   </div>
   <script src="script.js"></script>
