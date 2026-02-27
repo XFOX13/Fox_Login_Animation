@@ -1,0 +1,132 @@
+body {
+  background: #efefef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.fox {
+  position: relative;
+  width: 180px;
+  height: 130px;
+  margin: 0 auto 25px;
+}
+
+.ear {
+  position: absolute;
+  top: 0;
+  width: 45px;
+  height: 55px;
+  background: #E27934;
+  border-radius: 50% 50% 0 0;
+}
+
+.ear.left {
+  left: -35px;
+  transform: rotate(-15deg);
+}
+
+.ear.right {
+  right: -35px;
+  transform: rotate(15deg);
+}
+
+.face {
+  width: 140px;
+  height: 110px;
+  background: #E27934;
+  border-radius: 50% 50% 55% 55%;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1;
+  box-shadow: 0 3px 15px #d15d1e40;
+}
+
+.eye {
+  width: 32px;
+  height: 32px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 35px;
+}
+
+.eye.left {
+  left: 28px;
+}
+
+.eye.right {
+  right: 28px;
+}
+
+.pupil {
+  width: 14px;
+  height: 14px;
+  background: #222;
+  border-radius: 50%;
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  transition: transform .1s;
+}
+
+.nose {
+  width: 18px;
+  height: 18px;
+  background: #333;
+  border-radius: 50% 50% 60% 60%;
+  position: absolute;
+  top: 70px;
+  left: 61px;
+}
+
+.paw {
+  width: 35px;
+  height: 35px;
+  background: #e28850;
+  border-radius: 50% 50% 45% 45%;
+  position: absolute;
+  top: 68px;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity .17s;
+}
+
+.paw.left {
+  left: 0px;
+}
+.paw.right {
+  right: 0px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 220px;
+  margin: 0 auto;
+}
+
+input {
+  font-size: 17px;
+  padding: 8px;
+  border: 2px solid #ddd;
+  border-radius: 7px;
+}
+
+button {
+  font-size: 18px;
+  background: #E27934;
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  border-radius: 7px;
+  cursor: pointer;
+}
